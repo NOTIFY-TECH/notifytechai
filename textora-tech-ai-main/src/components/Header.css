@@ -1,0 +1,53 @@
+/* Gradient logo animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradientShift {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+/* Floating shapes */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.5; }
+  50% { transform: translateY(-10px) rotate(15deg); opacity: 0.8; }
+}
+.floating-shape {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  opacity: 0.3;
+  background: linear-gradient(90deg, #a855f7, #ec4899, #ef4444);
+  animation: float 6s ease-in-out infinite;
+}
+.floating-shape-1 { top: 10%; left: 20%; animation-delay: 0s; animation-duration: 6s; }
+.floating-shape-2 { top: 30%; left: 60%; animation-delay: 1s; animation-duration: 7s; }
+.floating-shape-3 { top: 50%; left: 40%; animation-delay: 2s; animation-duration: 8s; }
+.floating-shape-4 { top: 70%; left: 80%; animation-delay: 1.5s; animation-duration: 6.5s; }
+.floating-shape-5 { top: 20%; left: 70%; animation-delay: 0.5s; animation-duration: 7.2s; }
+
+/* Shadow glow */
+.shadow-glow {
+  box-shadow: 0 4px 15px rgba(255,100,200,0.3), 0 0 15px rgba(200,100,255,0.3);
+}
+
+/* Dynamic scroll gradient border */
+.dynamic-gradient-border {
+  height: 0.25rem;
+  background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--success)) 50%, hsl(var(--primary)) 100%);
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.dynamic-gradient-border.scrolled {
+  opacity: 1;
+  animation: gradient-sweep 3s ease-in-out infinite;
+}
+@keyframes gradient-sweep {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

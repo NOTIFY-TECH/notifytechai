@@ -1,0 +1,7 @@
+project_id = "alozeflvqnvutklnbojl"
+
+[functions.textora-chat]
+verify_jwt = false
+
+[functions.submit-lead]
+verify_jwt = false
