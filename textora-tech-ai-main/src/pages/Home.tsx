@@ -9,6 +9,7 @@ const AdvancedFeatures = lazy(() => import('@/components/home/AdvancedFeatures')
 const LiveDemo = lazy(() => import('@/components/home/LiveDemo'));
 const VideoShowcase = lazy(() => import('@/components/home/VideoShowcase'));
 const ChannelComparison = lazy(() => import('@/components/home/ChannelComparison'));
+const Partnerships = lazy(() => import('@/components/home/Partnerships'));
 const Testimonials = lazy(() => import('@/components/home/Testimonials'));
 const ClientLogos = lazy(() => import('@/components/home/ClientLogos'));
 const FinalCTA = lazy(() => import('@/components/home/FinalCTA'));
@@ -24,6 +25,7 @@ const Home = () => {
       <LiveDemo />
       <ChannelComparison />
       <AdvancedFeatures />
+      <Partnerships />
       <Testimonials />
       <ClientLogos />
       <FinalCTA />

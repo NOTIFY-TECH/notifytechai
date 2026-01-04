@@ -166,7 +166,7 @@ const Contact = () => {
       {/* Contact Form & Info */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
             {/* Contact Info Cards */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -210,7 +210,7 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-2"
+              className="md:col-span-2"
             >
               <form onSubmit={handleSubmit} className="bg-card p-8 rounded-2xl border border-border shadow-xl">
                 <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>

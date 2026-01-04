@@ -269,15 +269,15 @@ const Services = () => {
                 </div>
 
                 <div className="p-6 relative z-10">
-                  <motion.h3 
-                    className="text-2xl font-bold mb-2"
+                  <motion.h3
+                    className="text-xl sm:text-2xl font-bold mb-2 break-words"
                     animate={{
                       color: hoveredCard === index ? "hsl(var(--primary))" : "hsl(var(--foreground))",
                     }}
                   >
                     {service.title}
                   </motion.h3>
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
+                  <p className="text-muted-foreground mb-4 break-words">{service.description}</p>
 
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, idx) => (

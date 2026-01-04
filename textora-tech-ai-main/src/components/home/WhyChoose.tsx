@@ -121,7 +121,7 @@ const WhyChoose = () => {
               variants={itemVariants}
               className="group perspective-1000"
             >
-              <div className="flip-card h-[320px]">
+              <div className="flip-card min-h-[320px]">
                 <div className="flip-card-inner">
                   {/* Front of card */}
                   <div className="flip-card-front">
@@ -154,7 +154,7 @@ const WhyChoose = () => {
                               whileInView={{ opacity: 1, x: 0 }}
                               transition={{ delay: idx * 0.1 }}
                             >
-                              <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                              <CheckCircle className="w-5 h-5 flex-shrink-0 text-primary-foreground" />
                               <span className="font-medium">{item}</span>
                             </motion.div>
                           </li>

@@ -26,6 +26,12 @@ const Footer = () => {
       { name: 'Integration Guides', path: '/developer#guides' },
       { name: 'Support', path: '/contact' },
     ],
+    community: [
+      { name: 'Blog', path: '/blog' },
+      { name: 'Discord Community', href: 'https://discord.gg/notifytechai' },
+      { name: 'GitHub', href: 'https://github.com/notifytechai' },
+      { name: 'Newsletter', path: '/newsletter' },
+    ],
     legal: [
       { name: 'Terms of Service', path: '/terms' },
       { name: 'Privacy Policy', path: '/privacy' },
@@ -52,11 +58,60 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">OC</span>
+            <Link to="/" className="group inline-flex items-center gap-3 select-none">
+              {/* Lettermark Icon */}
+              <div
+                className="
+                  relative h-11 w-11 rounded-xl
+                  bg-gradient-to-br from-indigo-600 via-purple-600 to-fuchsia-600
+                  flex items-center justify-center
+                  shadow-xl shadow-purple-600/35
+                  transition-all duration-300
+                  group-hover:scale-105
+                "
+              >
+                {/* inner glass */}
+                <span className="absolute inset-0 rounded-xl bg-white/10" />
+            
+                {/* NT + AI mark */}
+                <svg
+                  viewBox="0 0 24 24"
+                  className="relative z-10 h-6 w-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  {/* N */}
+                  <path d="M6 17V7l6 10V7" />
+            
+                  {/* T */}
+                  <path d="M14 7h6" />
+                  <path d="M17 7v10" />
+            
+                  {/* AI dot */}
+                  <circle cx="17" cy="18" r="1.1" fill="currentColor" stroke="none" />
+                </svg>
               </div>
-              <span className="text-xl font-bold">NotifyCore.AI</span>
+            
+              {/* Brand Text */}
+              <div className="flex flex-col leading-tight">
+                <span
+                  className="
+                    text-xl md:text-2xl font-bold tracking-tight
+                    bg-gradient-to-r from-indigo-400 to-purple-500
+                    bg-clip-text text-transparent
+                  "
+                >
+                  NotifyTech<span className="font-extrabold">AI</span>
+                </span>
+            
+                <span className="text-xxs uppercase tracking-wide font-semibold text-black dark:text-white">
+Innovate • Connect • Grow
+</span>
+
+              </div>
             </Link>
             <p className="text-muted-foreground text-sm mb-4 max-w-sm">
               Turbocharge customer engagement with verified WhatsApp Business API and DLT-compliant SMS solutions. Trusted by 5,000+ businesses globally.

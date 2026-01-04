@@ -106,48 +106,96 @@ const ComparisonTable = () => {
 
           {/* Table Body */}
           <div className="divide-y divide-border">
-            {services.map((service, serviceIdx) => (
-              <motion.div
-                key={serviceIdx}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: serviceIdx * 0.1 }}
-              >
-                {/* Category Header */}
-                <div className="grid grid-cols-4 gap-4 p-4 bg-muted/50">
-                  <div className="col-span-4 flex items-center gap-3">
-                    <div className={`w-9 h-9 rounded-lg ${service.iconBg} flex items-center justify-center`}>
-                      <service.icon size={18} className={service.iconColor} />
-                    </div>
-                    <span className="font-semibold text-foreground">{service.category}</span>
-                  </div>
-                </div>
-                
-                {/* Service Items */}
-                {service.items.map((item, itemIdx) => (
-                  <div 
-                    key={itemIdx}
-                    className="grid grid-cols-4 gap-4 p-4 hover:bg-muted/30 transition-colors"
-                  >
-                    <div className="text-sm text-muted-foreground pl-12">
-                      {item.name}
-                    </div>
-                    <div className="text-center">
-                      <span className="text-sm font-medium text-foreground">{item.silver}</span>
-                    </div>
-                    <div className="text-center">
-                      <span className="text-sm font-bold text-amber-600 dark:text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full">
-                        {item.gold}
-                      </span>
-                    </div>
-                    <div className="text-center">
-                      <span className="text-sm font-medium text-foreground">{item.platinum}</span>
+            {/* Desktop Table */}
+            <div className="hidden md:block">
+              {services.map((service, serviceIdx) => (
+                <motion.div
+                  key={serviceIdx}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: serviceIdx * 0.1 }}
+                >
+                  {/* Category Header */}
+                  <div className="grid grid-cols-4 gap-4 p-4 bg-muted/50">
+                    <div className="col-span-4 flex items-center gap-3">
+                      <div className={`w-9 h-9 rounded-lg ${service.iconBg} flex items-center justify-center`}>
+                        <service.icon size={18} className={service.iconColor} />
+                      </div>
+                      <span className="font-semibold text-foreground">{service.category}</span>
                     </div>
                   </div>
-                ))}
-              </motion.div>
-            ))}
+
+                  {/* Service Items */}
+                  {service.items.map((item, itemIdx) => (
+                    <div
+                      key={itemIdx}
+                      className="grid grid-cols-4 gap-4 p-4 hover:bg-muted/30 transition-colors"
+                    >
+                      <div className="text-sm text-muted-foreground pl-12">
+                        {item.name}
+                      </div>
+                      <div className="text-center">
+                        <span className="text-sm font-medium text-foreground">{item.silver}</span>
+                      </div>
+                      <div className="text-center">
+                        <span className="text-sm font-bold text-amber-600 dark:text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full">
+                          {item.gold}
+                        </span>
+                      </div>
+                      <div className="text-center">
+                        <span className="text-sm font-medium text-foreground">{item.platinum}</span>
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Mobile Cards */}
+            <div className="md:hidden">
+              {services.map((service, serviceIdx) => (
+                <motion.div
+                  key={serviceIdx}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: serviceIdx * 0.1 }}
+                  className="p-4"
+                >
+                  {/* Category Header */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className={`w-10 h-10 rounded-lg ${service.iconBg} flex items-center justify-center`}>
+                      <service.icon size={20} className={service.iconColor} />
+                    </div>
+                    <span className="font-semibold text-foreground text-lg">{service.category}</span>
+                  </div>
+
+                  {/* Service Items */}
+                  {service.items.map((item, itemIdx) => (
+                    <div key={itemIdx} className="mb-4 p-3 bg-muted/30 rounded-lg">
+                      <div className="font-medium text-foreground mb-2">{item.name}</div>
+                      <div className="grid grid-cols-3 gap-2 text-sm">
+                        <div className="text-center">
+                          <div className="text-xs text-muted-foreground mb-1">Silver</div>
+                          <span className="font-medium">{item.silver}</span>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-xs text-muted-foreground mb-1">Gold</div>
+                          <span className="font-bold text-amber-600 dark:text-amber-400 bg-amber-500/10 px-2 py-1 rounded-full text-xs">
+                            {item.gold}
+                          </span>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-xs text-muted-foreground mb-1">Platinum</div>
+                          <span className="font-medium">{item.platinum}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
 

@@ -151,6 +151,7 @@ const Globe = ({ isMobile }: GlobeProps) => {
                   side={THREE.DoubleSide}
                 />
               </mesh>
+              
             )}
           </group>
         ))}

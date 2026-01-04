@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 max-w-full overflow-hidden ${
         isScrolled ? 'bg-card/95 backdrop-blur-lg shadow-xl' : 'bg-transparent'
       }`}
     >
@@ -49,18 +49,65 @@ const Header = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="relative group flex flex-col">
-            <span className="text-2xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent animate-gradientShift transition-transform duration-500 group-hover:scale-105">
-              NotifyCore.AI
-            </span>
-            <span className="text-xs text-muted-foreground/70 group-hover:text-purple-500 transition-all">
-              Innovate • Connect • Grow
-            </span>
-          </Link>
+         {/* Logo */}
+<Link to="/" className="group inline-flex items-center gap-3 select-none">
+  {/* Lettermark Icon */}
+  <div
+    className="
+      relative h-11 w-11 rounded-xl
+      bg-gradient-to-br from-indigo-600 via-purple-600 to-fuchsia-600
+      flex items-center justify-center
+      shadow-xl shadow-purple-600/35
+      transition-all duration-300
+      group-hover:scale-105
+    "
+  >
+    {/* inner glass */}
+    <span className="absolute inset-0 rounded-xl bg-white/10" />
+
+    {/* NT + AI mark */}
+    <svg
+      viewBox="0 0 24 24"
+      className="relative z-10 h-6 w-6 text-white"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {/* N */}
+      <path d="M6 17V7l6 10V7" />
+
+      {/* T */}
+      <path d="M14 7h6" />
+      <path d="M17 7v10" />
+
+      {/* AI dot */}
+      <circle cx="17" cy="18" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  </div>
+
+  {/* Brand Text */}
+  <div className="flex flex-col leading-tight">
+    <span
+      className="
+        text-xl md:text-2xl font-bold tracking-tight
+        bg-gradient-to-r from-indigo-400 to-purple-500
+        bg-clip-text text-transparent
+      "
+    >
+      NotifyTech<span className="font-extrabold">AI</span>
+    </span>
+
+    <span className="text-xxs uppercase tracking-wide font-semibold text-black dark:text-white">
+Innovate • Connect • Grow
+</span>
+  </div>
+</Link>
+
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -69,6 +116,8 @@ const Header = () => {
                   isActive(link.path)
                     ? 'text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500'
                     : 'text-foreground/80 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500'
+                } ${
+                  (link.name === 'Reseller' || link.name === 'Blog') && 'hidden xl:block'
                 }`}
               >
                 {link.name}
